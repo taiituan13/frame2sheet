@@ -41,10 +41,11 @@ def process_video_to_sheet(url: str, x_pct: float, y_pct: float, w_pct: float, h
     try:
         print(f"⏳ Đang tải video từ: {url}")
         ydl_opts = {
-            'format': 'bestvideo[height<=720][ext=mp4]',
-            'outtmpl': temp_video,
-            'noplaylist': True,
-        }
+        'format': 'bestvideo[height<=720][ext=mp4]',
+        'outtmpl': temp_video,
+        'noplaylist': True,
+        'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+}
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             ydl.download([url])
 
