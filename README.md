@@ -43,3 +43,6 @@ source venv/bin/activate
 
 # Cài đặt thư viện
 pip install fastapi uvicorn yt-dlp opencv-python numpy Pillow
+
+# Đảm bảo đã activate venv
+python -m uvicorn main:app --reload
